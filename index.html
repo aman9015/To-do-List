@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="notifications" class="notifications hidden"></div>
+
+    <div class="container">
+        <header>
+            <h1>My To-Do List</h1>
+            <div id="user-info">
+                <!-- User info will be populated here -->
+            </div>
+            <button id="logoutButton" class="logout-button">Logout</button>
+        </header>
+
+        <main>
+            <ul id="taskList"></ul>
+            <div class="actions">
+                <button id="addTaskButton">Add Task</button>
+                <button id="viewCompletedTasks">View Completed Tasks</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="completedTasksContainer" class="hidden">
+        <h2>Completed Tasks</h2>
+        <ul id="completedTaskList"></ul>
+        <div class="actions">
+            <button id="resetTasks">Reset Completed Tasks</button>
+            <button id="backToToDoList">Go to To-Do List</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                // Redirect to login page if not logged in
+                window.location.href = "login.html";
+            } else {
+                displayUserInfo(user);
+            }
+
+            // Logout functionality
+            const logoutButton = document.getElementById('logoutButton');
+            logoutButton.addEventListener('click', () => {
+                localStorage.removeItem('user');
+                window.location.href = "login.html";
+            });
+        });
+
+        function displayUserInfo(user) {
+            const userInfoDiv = document.getElementById('user-info');
+            if (user.picture) {
+                const img = document.createElement('img');
+                img.src = user.picture;
+                img.alt = "User Picture";
+                img.classList.add('user-picture');
+                userInfoDiv.appendChild(img);
+            }
+
+            const name = document.createElement('span');
+            name.textContent = user.name;
+            name.classList.add('user-name');
+            userInfoDiv.appendChild(name);
+        }
+    </script>
+</body>
+</html>
