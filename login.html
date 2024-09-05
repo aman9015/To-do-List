@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - To-Do List App</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Identity Services -->
+   
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -45,18 +45,18 @@
             console.log("Image URL: " + responsePayload.picture);
             console.log("Email: " + responsePayload.email);
 
-            // Save user data to local storage
+          
             localStorage.setItem('user', JSON.stringify({
                 name: responsePayload.name,
                 email: responsePayload.email,
                 picture: responsePayload.picture
             }));
 
-            // Redirect to the main page
+         
             window.location.href = "main.html";
         }
 
-        // Function to parse JWT token
+   
         function parseJwt(token) {
             const base64Url = token.split('.')[1];
             const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -79,7 +79,7 @@
 
                 console.log('User set in local storage:', localStorage.getItem('user'));
 
-                // Redirect to the main page
+                
                 window.location.href = "index.html"; // Ensure this path is correct
             });
         });
