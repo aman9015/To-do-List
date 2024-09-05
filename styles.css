@@ -203,7 +203,7 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* Empty Message Styling */
+
 .empty-message {
     color: #666;
     font-style: italic;
@@ -221,7 +221,7 @@ button:hover {
     to { transform: translateX(0); }
 }
 
-
+/* Responsive Design */
 @media (max-width: 600px) {
     .container, #completedTasksContainer, .login-container {
         width: 95%;
@@ -406,3 +406,163 @@ button {
     gap: 15px;
     margin-top: 20px;
 }
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Create depth */
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateZ(10px); /* Moves the button forward */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Increase shadow for 3D effect */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: url(https://images.unsplash.com/photo-1644329843491-99edfc83de04?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #333;
+    perspective: 1000px; /* Adds depth to 3D effects */
+}
+
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Larger shadow for depth */
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+    border: 2px solid #ddd;
+    transform: rotateY(5deg) rotateX(3deg); /* Slight tilt for 3D effect */
+    transition: transform 0.5s ease;
+}
+
+.container:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.05); /* Pop-up effect */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateZ(50px); /* Makes header appear closer */
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increased shadow for 3D */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transform: rotateY(-3deg); /* Tilt each task for 3D feel */
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: rotateY(0deg) scale(1.05); /* Pop-out on hover */
+}
+
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 3D button effect */
+    transition: transform 0.3s ease, background-color 0.3s;
+    transform: translateZ(30px); /* Appears as if floating */
+}
+
+button:hover {
+    transform: translateZ(40px) scale(1.05); /* Pop-out effect */
+    background-color: #45a049;
+}
+
+
+.edit-button {
+    background-color: #f8e8c1;
+    border: 1px solid #d0a867;
+    color: #333;
+}
+
+
+.deadline-button {
+    background-color: #cce5ff;
+    border: 1px solid #8cb3e0;
+    color: #333;
+}
+
+
+#completedTasksContainer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    border: 2px solid #ddd;
+    transform: rotateY(5deg);
+    transition: transform 0.5s ease;
+}
+
+#completedTasksContainer:hover {
+    transform: rotateY(0deg) scale(1.05);
+}
+
+
+a {
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s;
+    transform: translateZ(10px);
+}
+
+a:hover {
+    transform: translateZ(20px);
+    color: #17a2b8;
+}
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    transform: translateZ(30px);
+}
+
