@@ -1,4 +1,4 @@
-/* General styling */
+
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
@@ -221,7 +221,7 @@ button:hover {
     to { transform: translateX(0); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     .container, #completedTasksContainer, .login-container {
         width: 95%;
@@ -283,8 +283,7 @@ button:hover {
 .notifications.hidden {
     display: none;
 }
-/* General styling */
-/* General styling */
+
 body {
     font-family: 'Georgia', serif;
     background: url(https://images.unsplash.com/photo-1644329843491-99edfc83de04?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
@@ -295,7 +294,7 @@ body {
     color: #333;
 }
 
-/* Main Container */
+
 .container {
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
     padding: 40px;
@@ -311,7 +310,7 @@ body {
     background-size: cover; /* Ensure background texture covers the area */
 }
 
-/* Header Styling */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -324,7 +323,7 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Task List Styling */
+
 ul {
     list-style: none;
     padding: 0;
@@ -343,7 +342,7 @@ li {
     position: relative;
 }
 
-/* Add visual accent */
+
 li::before {
     content: '';
     position: absolute;
@@ -356,26 +355,26 @@ li::before {
     border-bottom-left-radius: 10px;
 }
 
-/* Buttons Styling */
+
 button {
     font-family: 'Courier New', Courier, monospace; /* Typewriter font */
 }
 
-/* Edit Button */
+
 .edit-button {
     background-color: #f8e8c1; /* Light yellow */
     border: 1px solid #d0a867;
     color: #333;
 }
 
-/* Deadline Button */
+
 .deadline-button {
     background-color: #cce5ff; /* Light blue */
     border: 1px solid #8cb3e0;
     color: #333;
 }
 
-/* Completed Tasks Container */
+
 #completedTasksContainer {
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
     padding: 40px;
@@ -390,7 +389,7 @@ button {
     background-size: cover; /* Ensure background texture covers the area */
 }
 
-/* Empty Message Styling */
+
 .empty-message {
     color: #666;
     font-style: italic;
@@ -400,7 +399,7 @@ button {
     text-align: center;
 }
 
-/* Action Buttons */
+
 .actions {
     display: flex;
     flex-direction: column;
