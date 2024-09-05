@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetTasksBtn = document.getElementById('reset-tasks-btn');
     const backToMainBtn = document.getElementById('back-to-main-btn');
 
-    // Load completed tasks from local storage
+ 
     const recentTasks = JSON.parse(localStorage.getItem('recentTasks')) || [];
     recentTasks.forEach(task => {
         const li = document.createElement('li');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         completedTasksList.appendChild(li);
     });
 
-    // Reset completed tasks
+   
     resetTasksBtn.addEventListener('click', () => {
         if (confirm('Are you sure you want to reset all completed tasks?')) {
             localStorage.removeItem('recentTasks');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Go back to the main page
+
     backToMainBtn.addEventListener('click', () => {
         window.location.href = 'main.html'; // Ensure this points to your main page
     });
