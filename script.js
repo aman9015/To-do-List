@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let tasks = [];
     let completedTasks = [];
 
-    // Load tasks from local storage on initialization
+    
     loadTasksFromLocalStorage();
 
-    // Render tasks on initialization
+   
     renderTasks();
 
-    // Event listener for adding a new task
+ 
     addTaskButton.addEventListener('click', () => {
         const taskName = prompt('Enter task name:');
         if (taskName) {
@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener for viewing completed tasks
+    
     viewCompletedTasksButton.addEventListener('click', () => {
         completedTasksContainer.classList.remove('hidden');
         renderCompletedTasks();
     });
 
-    // Event listener for resetting completed tasks
+  
     resetTasksButton.addEventListener('click', () => {
         if (confirm('Are you sure you want to reset all completed tasks?')) {
             completedTasks = [];
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener for going back to the to-do list
+   
     backToToDoListButton.addEventListener('click', () => {
         completedTasksContainer.classList.add('hidden');
     });
 
-    // Function to render tasks
+    
     function renderTasks() {
         taskList.innerHTML = '';
         if (tasks.length === 0) {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to render completed tasks
+    
     function renderCompletedTasks() {
         completedTaskList.innerHTML = '';
         if (completedTasks.length === 0) {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTasks();
     }
 
-    // Function to edit a task
+    
     function editTask(index) {
         const newTaskName = prompt('Edit task name:', tasks[index].name);
         if (newTaskName) {
@@ -150,17 +150,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function setDeadline(index) {
         const task = tasks[index];
     
-        // Check if deadline modal already exists
+      
         let deadlineModal = document.querySelector('.deadline-modal');
         if (deadlineModal) {
-            // If it exists, just update the input value
+           
             const dateTimeInput = deadlineModal.querySelector('#deadline-input');
             dateTimeInput.value = task.deadline || '';
             deadlineModal.style.display = 'block';
             return;
         }
     
-        // Create the deadline modal if it does not exist
+       
         deadlineModal = document.createElement('div');
         deadlineModal.classList.add('deadline-modal');
     
@@ -231,14 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    // Function to save completed tasks to local storage
+    
     function saveCompletedTasksToLocalStorage() {
         localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
     }
     document.addEventListener('DOMContentLoaded', () => {
-        // Other initialization code...
-    
-        // Check for past deadlines every 30 minutes
+      
         setInterval(checkDeadlines, 30 * 60 * 1000); // 30 minutes in milliseconds
     
         function checkDeadlines() {
@@ -258,13 +256,13 @@ document.addEventListener('DOMContentLoaded', () => {
             notificationDiv.textContent = `You have passed the deadline for "${taskName}" task. Reschedule it or complete it fast.`;
             notificationDiv.classList.remove('hidden');
     
-            // Hide notification after 10 seconds
+            
             setTimeout(() => {
                 notificationDiv.classList.add('hidden');
             }, 10000);
         }
     
-        // Add other event listeners and functions...
+        
     });
     
 });
